@@ -20,3 +20,43 @@ body
 {
   overflow-x: hidden;
 }
+.flex-center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.col
+{
+  flex-flow: column;
+}
+.input
+{
+  background: #BBB;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-size: 1.1em;
+  height: 2.5rem;
+  width: 20rem;
+  padding: 10px;
+}
+.input:hover
+{
+  background: #DDD;
+}
+.margin1
+{
+  margin: 1rem;
+}
+.button1
+{
+  border-radius: 10px;
+  cursor: pointer;
+  height: 3rem;
+  width: 10rem;
+}
+.button1:hover
+{
+  background-color: rgba(0, 255, 255, 0.452);
+}
