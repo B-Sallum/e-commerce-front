@@ -1,6 +1,6 @@
 
 
-const Main = () => {
+const User = () => {
 
 
 
@@ -11,4 +11,4 @@ const Main = () => {
   )
 }
 
-export default Main;
+export default User;

@@ -1,0 +1,47 @@
+.nav
+{
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,1) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0,0,0,1) 100%
+  );
+  border-bottom: 1px solid #ffaa22b4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  width: 100vw;
+}
+.nav__home{
+  margin-left: 2rem;
+}
+.nav__user
+{
+  margin-right: 2rem;
+}
+.nav__buttons
+{
+	background-color: #ffed6400;
+	border: 1px solid #ffaa22;
+  border-bottom: 0;
+  border-top: 0;
+  border-radius: 10px;
+	cursor: pointer;
+	color: #ffaa22;
+	padding: 4px 12px;
+  width: 6rem;
+}
+.nav__buttons:hover
+{
+  background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color: #ffab23;
+  color: black;
+  transition: ease-in 0.3s;
+}
+.nav__buttons:active
+{
+	position: relative;
+	top: 1px;
+  left: 0.1px;
+}
