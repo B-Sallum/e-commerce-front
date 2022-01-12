@@ -22,22 +22,15 @@
 }
 .nav__buttons
 {
-	background-color: #ffed6400;
-	border: 1px solid #ffaa22;
-  border-bottom: 0;
-  border-top: 0;
+	background-color: #ffaa22;
   border-radius: 10px;
 	cursor: pointer;
-	color: #ffaa22;
 	padding: 4px 12px;
   width: 6rem;
 }
 .nav__buttons:hover
 {
   background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color: #ffab23;
-  color: black;
-  transition: ease-in 0.3s;
 }
 .nav__buttons:active
 {

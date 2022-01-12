@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Card from '../../components/product/card'
-import './main.css';
+import Card from '../components/product/card';
 
 const Main = () => {
 
@@ -10,13 +9,13 @@ const Main = () => {
   const [trigger, setTrigger] = useState(false);
   const [List, setList] = useState([]);
 
-  async function getMovies() {
+  async function getProducts() {
     return await axios.get('/product/all')
   }
 
   useEffect(() => {
     if (!trigger) {
-      getMovies()
+      getProducts()
       .then((response) => {        
           setList(response.data)
           setTrigger(true)
@@ -26,7 +25,7 @@ const Main = () => {
 
   return (
     <>
-    <div className='movies'>
+    <div className='flex-center row'>
       {List.map((product) => {
         return (
           <Card

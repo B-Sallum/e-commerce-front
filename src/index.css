@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  color: black;
 }
 body
 {
@@ -30,6 +31,10 @@ body
 .col
 {
   flex-flow: column;
+}
+.row
+{
+  flex-flow: row wrap;
 }
 .input
 {
