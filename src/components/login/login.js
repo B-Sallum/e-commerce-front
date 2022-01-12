@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const login = { email: user, password: pass };
+    const login = { email: user, pass: pass };
 
     axios.post('/auth/login', login)
     .then((res) => {
