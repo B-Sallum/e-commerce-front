@@ -4,8 +4,6 @@ import Card from '../components/product/card';
 
 const Main = () => {
 
-  axios.defaults.baseURL = 'http://localhost:3001/';
-
   const [trigger, setTrigger] = useState(false);
   const [List, setList] = useState([]);
 

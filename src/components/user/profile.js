@@ -4,27 +4,22 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Profile = () => {
 
-  axios.defaults.baseURL = 'http://localhost:3001/';
-
   const navigate = useNavigate();
 
-  if (localStorage.getItem('token') == null) {
-    navigate('/login');
-  }
-
   const [user, setUser] = useState('');
-  const getUser = async () => {
-    const user = await axios.get('/auth/myprofile', {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-    });
-    setUser(user.data);
-  };
+  const [logged, setLogged] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    getUser().catch(() => {
-      navigate("/login");
-    });
-  }, []);
+    setMounted(true);
+    axios.get('/auth/myprofile', {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+    })
+    .then((response) => {
+      setLogged(true);
+      setUser(response.data);
+    })
+  }, [mounted]);
 
   const logout = () => {
     localStorage.removeItem('token');
@@ -32,19 +27,27 @@ const Profile = () => {
   }
 
   return (
-    <div className='flex__center'>
-      <img src={user.imageUrl} alt=''/>
-      <h2>{user.name}</h2>
-      <h2>{user.email}</h2>
-      <h2>{user.birthdate}</h2>
-      <Link to={'/mylist'}>
-        <button className='nav__buttons'>
-          <h3>My Movies</h3>
-        </button>
-      </Link>
-      <button onClick={logout} className='nav__buttons'>
-          <h3>Logout</h3>
-        </button>
+    <div className='flex-center col'>
+      {
+        logged ? (
+          <>
+            <img src={user.imageUrl} alt=''/>
+            <h2>{user.name}</h2>
+            <h2>{user.email}</h2>
+            <h2>{user.birthdate}</h2>
+            <Link to={'/mylist'}>
+              <button className='nav__buttons'>
+                <h3>My Movies</h3>
+              </button>
+            </Link>
+            <button onClick={logout} className='nav__buttons'>
+                <h3>Logoff</h3>
+            </button>
+          </>
+        ) : (
+          <div>Please log in</div>
+        )
+      }
     </div>
   )
 }

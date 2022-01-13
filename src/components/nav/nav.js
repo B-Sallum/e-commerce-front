@@ -18,7 +18,7 @@ const NavBar = () => (
       </Link>
       <Link to={'/register'}>
         <button className='nav__buttons'>
-          <h3>Sign Up</h3>
+          <h3>Register</h3>
         </button>
       </Link>
       <Link to={'/profile/'}>

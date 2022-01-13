@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-  axios.defaults.baseURL = 'http://localhost:3001/';
-  
   const [user, setUser] = useState('');
   const [pass, setPass] = useState('');
   const navigate = useNavigate();

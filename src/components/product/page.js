@@ -2,49 +2,43 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-
 const Product = () => {
-
-  axios.defaults.baseURL = 'http://localhost:3001/';
 
   const id = useParams().id;
 
   const [product, setProduct] = useState({});
-
-  const getProduct = async () => {
-    return axios.get(`/product/${id}`);
-  }
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    getProduct()
+    setMounted(true);
+    axios.get(`/product/${id}`)
       .then((res) => {
         setProduct(res.data);
       });
-  }, []);
+  }, [mounted]);
 
-  const addMovie = () => {
+  const addToCart = () => {
 
   }
 
   return (
-    <div className='flex__center'>
+    <div className='flex-center col'>
+      <div className='product__title'>
+        <h3>{product.name} - {product.price}</h3>
+      </div>
 
-    <div className='movie__title'>
-       <button onClick={addMovie} className='nav__buttons'>
-        Add to Cart
+      <div className='product flex-center'>
+        <div className='product__details__left'>
+          <img src={product.imgUrl} alt=''/>
+        </div>
+        <div className='product__details__right'>
+          <h2 className='product__details__resume'>{product.description}</h2>
+        </div>
+      </div>
+      <button onClick={addToCart} className='nav__buttons'>
+          Add to Cart
       </button>
-      <h3>{product.name} - {product.price}</h3>
     </div>
-
-    <div className='movies'>
-      <div className='movie__details__left'>
-        <img src={product.imgUrl} alt=''/>
-      </div>
-      <div className='movie__details__right'>
-        <h2 className='movie__details__resume'>{product.description}</h2>
-      </div>
-    </div>
-  </div>
   )
 }
 

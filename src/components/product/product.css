@@ -6,3 +6,7 @@
 {
   width: 200px;
 }
+.product__details__left img
+{
+  width: 50vw;
+}
