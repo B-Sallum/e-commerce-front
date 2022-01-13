@@ -21,10 +21,6 @@ const Profile = () => {
     })
   }, [mounted]);
 
-  const logout = () => {
-    localStorage.removeItem('token');
-    navigate('/');
-  }
 
   return (
     <div className='flex-center col'>
@@ -35,14 +31,6 @@ const Profile = () => {
             <h2>{user.name}</h2>
             <h2>{user.email}</h2>
             <h2>{user.birthdate}</h2>
-            <Link to={'/mylist'}>
-              <button className='nav__buttons'>
-                <h3>My Cart</h3>
-              </button>
-            </Link>
-            <button onClick={logout} className='nav__buttons'>
-                <h3>Logoff</h3>
-            </button>
           </>
         ) : (
           <div>Please log in</div>

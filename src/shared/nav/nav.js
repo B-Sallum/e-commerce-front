@@ -11,10 +11,6 @@ const NavBar = () => {
           </button>
         </Link>
       </div>
-
-      {
-        
-      }
       <div className='nav__user'>
         <Link to={'/register'}>
           <button className='nav__buttons'>
@@ -25,12 +21,7 @@ const NavBar = () => {
           <button className='nav__buttons'>
             <h3>Login</h3>
           </button>
-        </Link>
-        <Link to={'/profile/'}>
-          <button className='nav__buttons'>
-            <h3>Profile</h3>
-          </button>
-        </Link>    
+        </Link> 
       </div>
     </div>
   )

@@ -8,29 +8,30 @@ import Profile from './pages/profile';
 import axios from 'axios';
 import Cart from './components/cart';
 import { useEffect, useState } from 'react';
+import NavLogged from './shared/nav/navLogged';
 
 axios.defaults.baseURL = 'http://localhost:3001/';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const App = () => {
 
-  const [loginStatus, setLoginStatus] = useState(false);
+  const [nav, setNav] = useState(<NavBar />);
 
   useEffect(() => {
     axios.get('/auth/myprofile', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
     .then(() => {
-      setLoginStatus(true);
+      setNav(<NavLogged />)
     })
     .catch(() => {
-      setLoginStatus(false);
+      setNav(<NavBar />)
     })
-  }, [loginStatus]);
+  }, [nav]);
 
   return (
     <BrowserRouter>
-      <NavBar login={loginStatus} />
+      {nav}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/register" element={<Register />} />
