@@ -37,7 +37,7 @@ const Profile = () => {
             <h2>{user.birthdate}</h2>
             <Link to={'/mylist'}>
               <button className='nav__buttons'>
-                <h3>My Movies</h3>
+                <h3>My Cart</h3>
               </button>
             </Link>
             <button onClick={logout} className='nav__buttons'>

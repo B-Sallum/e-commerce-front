@@ -12,13 +12,17 @@ const Product = () => {
   useEffect(() => {
     setMounted(true);
     axios.get(`/product/${id}`)
-      .then((res) => {
+      .then(res => {
         setProduct(res.data);
-      });
+    });
   }, [mounted]);
 
   const addToCart = () => {
-
+    const token = localStorage.token;
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+    }
+    axios.patch(`/user/cart/${id}`, '', config);
   }
 
   return (

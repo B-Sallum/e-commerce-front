@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import Card from '../components/product/card';
+import Card from '../components/card';
 
 const Main = () => {
 
@@ -15,8 +15,8 @@ const Main = () => {
     if (!trigger) {
       getProducts()
       .then((response) => {        
-          setList(response.data)
-          setTrigger(true)
+        setList(response.data)
+        setTrigger(true)
       })
     }
   }, [trigger]);
