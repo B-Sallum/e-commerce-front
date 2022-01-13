@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../utils/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const Product = () => {
 
   useEffect(() => {
     setMounted(true);
-    axios.get(`/product/${id}`)
+    api.get(`/product/${id}`)
       .then(res => {
         setProduct(res.data);
     });
@@ -22,7 +22,7 @@ const Product = () => {
     const config = {
       headers: { Authorization: `Bearer ${token}` }
     }
-    axios.patch(`/user/cart/${id}`, '', config);
+    api.patch(`/user/cart/${id}`, '', config);
   }
 
   return (

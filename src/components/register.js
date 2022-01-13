@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../utils/api';
 import { useState } from 'react';
 
 const Register = () => {  
@@ -21,7 +21,7 @@ const Register = () => {
       passConfirm: passConfirm
     }
 
-    await axios.post('user/register', register)
+    await api.post('user/register', register)
       .then((res) => {
         return res;
       })

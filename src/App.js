@@ -5,33 +5,12 @@ import NavBar from './shared/nav/nav';
 import Login from './components/login';
 import Product from './pages/product';
 import Profile from './pages/profile';
-import axios from 'axios';
 import Cart from './components/cart';
-import { useEffect, useState } from 'react';
-import NavLogged from './shared/nav/navLogged';
-
-axios.defaults.baseURL = 'http://localhost:3001/';
-axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const App = () => {
-
-  const [nav, setNav] = useState(<NavBar />);
-
-  useEffect(() => {
-    axios.get('/auth/myprofile', {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-    })
-    .then(() => {
-      setNav(<NavLogged />)
-    })
-    .catch(() => {
-      setNav(<NavBar />)
-    })
-  }, [nav]);
-
   return (
     <BrowserRouter>
-      {nav}
+      <NavBar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/register" element={<Register />} />

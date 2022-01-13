@@ -1,3 +1,8 @@
+.back
+{
+  height: 4rem;
+  z-index: -1;
+}
 .nav
 {
   background: linear-gradient(
@@ -12,6 +17,8 @@
   align-items: center;
   height: 4rem;
   width: 100vw;
+  position: fixed;
+  top: 0px;
 }
 .nav__home{
   margin-left: 2rem;

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../utils/api';
 import { useState, useEffect } from 'react';
 import Card from '../components/card';
 
@@ -8,7 +8,7 @@ const Main = () => {
   const [List, setList] = useState([]);
 
   async function getProducts() {
-    return await axios.get('/product/all')
+    return await api.get('/product/all')
   }
 
   useEffect(() => {
@@ -23,22 +23,23 @@ const Main = () => {
 
   return (
     <>
-    <div className='flex-center row'>
-      {List.map((product) => {
-        return (
-          <Card
-            imgUrl={product.imgUrl}
-            alt={product.name}
-            name={product.title}
-            id={product.id}
-            price={product.price}
-            description={product.description}
-            key={product.id}
-          />
-        );
-      })}
-    </div>
-  </>
+      <img className='home' src='https://mla-s2-p.mlstatic.com/D_NQ_NP_713180-MLA47290360083_082021-OO.jpg' alt=''/>
+      <div className='flex-center row'>
+        {List.map((product) => {
+          return (
+            <Card
+              imgUrl={product.imgUrl}
+              alt={product.name}
+              name={product.name}
+              id={product.id}
+              price={product.price}
+              description={product.description}
+              key={product.id}
+            />
+          );
+        })}
+      </div>
+    </>
   )
 }
 

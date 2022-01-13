@@ -1,10 +1,7 @@
-import axios from "axios";
+import api from '../utils/api';
 import { React, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 const Profile = () => {
-
-  const navigate = useNavigate();
 
   const [user, setUser] = useState('');
   const [logged, setLogged] = useState(false);
@@ -12,7 +9,7 @@ const Profile = () => {
 
   useEffect(() => {
     setMounted(true);
-    axios.get('/auth/myprofile', {
+    api.get('/auth/myprofile', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
     .then((response) => {

@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 const Card = (props) => {  
   return (
     <Link to={`/product/${props.id}`}>
-      <div className='product__card'>
-        <h3 className='product__title'>{props.name}</h3>
+      <div className='flex-center col margin1 product__card'>
         <img src={props.imgUrl} alt={props.alt} />
+        <h3>{props.name}</h3>
         <h2>{props.price}</h2>
-        <h4>{props.description}</h4>
       </div>
     </Link>
   )
