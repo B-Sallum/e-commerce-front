@@ -1,17 +1,16 @@
 .back
 {
-  height: 4rem;
+  height: 2.5rem;
   z-index: -1;
 }
 .nav
 {
   background: linear-gradient(
-    90deg,
+    180deg,
     rgba(0,0,0,1) 0%,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0,0,0,1) 100%
+    rgba(0,0,0,1) 63%,
+    rgb(0, 0, 0, 0) 100%
   );
-  border-bottom: 1px solid #ffaa22b4;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,11 +28,12 @@
 }
 .nav__buttons
 {
-	background-color: #ffaa22;
+  border: 1px solid #000;
+	background-color: #fff;
   border-radius: 10px;
 	cursor: pointer;
 	padding: 4px 12px;
-  width: 6rem;
+  width: 8em;
 }
 .nav__buttons:hover
 {

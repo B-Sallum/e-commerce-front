@@ -21,6 +21,7 @@ const Profile = () => {
 
   return (
     <div className='flex-center col'>
+      <div className='back'></div>
       {
         logged ? (
           <>

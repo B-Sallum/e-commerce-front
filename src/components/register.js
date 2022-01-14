@@ -32,6 +32,7 @@ const Register = () => {
 
   return (
     <div className='flex-center col margin1'>
+      <div className='back'></div>
       <div className='margin1'><h2>Register</h2></div>
       <form onSubmit={handleSubmit} className='flex-center col'>
 

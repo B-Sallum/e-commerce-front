@@ -12,9 +12,9 @@ body
 {
   background: linear-gradient(
     90deg,
-  rgb(220, 220, 220) 0%,
-  rgba(200,200,200,1) 50%,
-  rgba(220,220,220,1) 100%
+  rgb(200, 200, 200, 1) 0%,
+  rgba(220,220,220,1) 50%,
+  rgba(200,200,200,1) 100%
   );
 }
 #root
@@ -63,7 +63,7 @@ body
 }
 .button1:hover
 {
-  background-color: rgba(0, 255, 255, 0.452);
+  background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
 }
 .product__card
 {

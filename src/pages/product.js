@@ -27,6 +27,7 @@ const Product = () => {
 
   return (
     <div className='flex-center col'>
+      <div className='back'></div>
       <div className='product__title'>
         <h3>{product.name} - {product.price}</h3>
       </div>

@@ -26,6 +26,8 @@ const Login = () => {
 
   return (
     <div className='flex-center col margin1'>
+      <div className='back'></div>
+      <div className='margin1'><h2>Login</h2></div>
       <form className='flex-center col margin1'>
         <input type='text' className='input' name='user' required 
           onChange={(event) => setUser(event.target.value)}
