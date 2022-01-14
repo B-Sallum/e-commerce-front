@@ -1,5 +1,5 @@
-import api from "../utils/api";
-import Card from "../components/card";
+import api from '../utils/api';
+import Card from '../components/card';
 import { useEffect, useState } from 'react';
 
 const Cart = () => {
@@ -27,19 +27,25 @@ const Cart = () => {
     <>
       <img className='home' src='https://www.meuportoseguro.com.br/wp-content/uploads/2015/08/importancia-planejar-compras_2-700x300.jpg' alt=''/>
       <div className='flex-center row'>
-        {cart.map((product) => {
-          return (
-            <Card
-              imgUrl={product.imgUrl}
-              alt={product.name}
-              name={product.name}
-              id={product.id}
-              price={product.price}
-              description={product.description}
-              key={product.id}
-            />
-          );
-        })}
+        {
+          cart.length > 0 ? (
+            cart.map((product) => {
+              return (
+                <Card
+                  imgUrl={product.imgUrl}
+                  alt={product.name}
+                  name={product.name}
+                  id={product.id}
+                  price={product.price}
+                  description={product.description}
+                  key={product.id}
+                />
+              );
+            })
+          ) : (
+            <h2>Carrinho Vazio!</h2>
+          )
+        }
       </div>
     </>
   )
